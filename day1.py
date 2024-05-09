@@ -17,3 +17,4 @@ for i in data:
     value = first + second
     result += int(value)
 print(result)
+File.close()
