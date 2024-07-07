@@ -1,5 +1,1 @@
-LLR
-
-AAA = (BBB, BBB)
-BBB = (AAA, ZZZ)
-ZZZ = (ZZZ, ZZZ)
+0 3 6 9 12 15
