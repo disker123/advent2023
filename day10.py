@@ -1,38 +1,15 @@
-#def find_path_size(line_index: int, pipe_index: int, trail: int, counter: int):
-#    print(data[line_index][pipe_index])
-#
-#    if((data[line_index-1][pipe_index] == "|" and trail != 1) or (data[line_index-1][pipe_index] == "7" and trail != 1) or (data[line_index-1][pipe_index] == "F" and trail != 1)):
-#        print("follow the top path")
-#        counter+=1
-#        find_path_size(line_index-1, pipe_index, 3, counter)
-#    elif((data[line_index][pipe_index+1] == "-" and trail != 2) or (data[line_index][pipe_index+1] == "J" and trail != 2) or (data[line_index][pipe_index+1] == "7"and trail != 2)):
-#        print("follow the right path")
-#        counter+=1
-#        find_path_size(line_index, pipe_index+1, 4, counter)
-#    elif((data[line_index+1][pipe_index] == "|" and trail != 3) or (data[line_index+1][pipe_index] == "J" and trail != 3) or (data[line_index+1][pipe_index] == "L" and trail != 3)):
-#        print("follow the bottom path")
-#        counter+=1
-#        find_path_size(line_index+1, pipe_index, 1, counter)
-#    elif((data[line_index][pipe_index-1] == "-" and trail != 4) or (data[line_index][pipe_index-1] == "L" and trail != 4) or (data[line_index][pipe_index-1] == "F"and trail != 4)):
-#        print("follow the left path")
-#        counter+=1
-#        find_path_size(line_index, pipe_index-1, 2, counter)
-#    elif(data[line_index-1][pipe_index] == "S" or data[line_index][pipe_index+1] == "S" or data[line_index+1][pipe_index] == "S" or data[line_index][pipe_index-1 == "S"]):
-#        counter+=1
-#        print("the length is: ", counter)
-
 #trail definition
 #1 = came from the top
 #2 = came from the right
 #3 = came from the bottom
 #4 = came from the left
 
-def find_path_size(line_index: int, pipe_index: int, trail: int, counter: int, finish: int):
+def find_path_size(line_index: int, pipe_index: int, trail: int, counter: int, finish: int):    #maps the pipe path and returns the length
     while True:
         pipe = data[line_index][pipe_index]
         print(pipe)
         counter+=1
-        match pipe:
+        match pipe: #gets the pipe shape and goes through to the other end to the next pipe
             case "S":
                 if(finish == 1):    #finish case
                     print("the length is : ", counter-1)
